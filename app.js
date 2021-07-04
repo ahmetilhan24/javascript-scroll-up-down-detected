@@ -1,7 +1,7 @@
 
 var scrollDetected = {
     el: {
-        searchBar: ".your-element",
+        elm: ".your-element",
         lastScrollY: 0
     },
     cls: {
@@ -9,14 +9,14 @@ var scrollDetected = {
     },
     scrolled: function(){
         var _t = this;
-        if(document.querySelector(_t.el.searchBar)){
+        if(document.querySelector(_t.el.elm)){
             document.addEventListener("scroll", function(){
                 var sTop = pageYOffset || document.documentElement.scrollTop;
                 if (sTop > _t.el.lastScrollY) {
-                    document.querySelector(_t.el.searchBar).classList.add(_t.cls.show);
+                    document.querySelector(_t.el.elm).classList.add(_t.cls.show);
                 }
                 else{
-                    document.querySelector(_t.el.searchBar).classList.remove(_t.cls.show)
+                    document.querySelector(_t.el.elm).classList.remove(_t.cls.show)
                 }
                 _t.el.lastScrollY = sTop <= 0 ? 0 : sTop;
             })
